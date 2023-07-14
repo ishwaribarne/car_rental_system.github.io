@@ -1,0 +1,115 @@
+<?php 
+$server = "localhost";
+$username = "root";
+$password = "";
+$database = "car";
+
+$conn = mysqli_connect($server , $username , $password , $database);
+
+if($conn){
+    echo"succes connection has been established";
+
+}
+
+else{
+    die("error".mysqli_connect_error());
+}
+
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resister page</title>
+    <style>
+        .form-box{
+            border: 3px solid black;
+            border-radius: 20px;
+           /* height: 500px; */
+           max-width: 450px;
+            width: 90%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            padding: 50px 60px 70px;
+            transform: translate(-50%,-50%);
+            text-align: center;
+        }
+
+        .form-box h1{
+            font-size: 30px;
+            margin-bottom:60px;
+            position: relative;
+            color:#004280;
+        }
+
+        .input{
+            background: #eaeaea;
+            margin :15px 0;
+            border-radius: 3px;
+            /* display: flex; */
+            align-items: center;
+            margin: 20px;
+        }
+
+        input{
+            width: 100%;
+            background: transparent;
+            border: 0;
+            outline: 0;
+            padding: 18px 15px;
+        }
+
+       .btn{
+        border: 3px solid #004280;
+        border-radius: 15px;
+        width: 400px;
+        /* height: 80px; */
+        font-size: 28px;
+        padding: 10px;
+        margin: 10px;
+        background-color: #004280;
+        color: white;
+        cursor: pointer;
+       }
+    </style>
+</head>
+<body>
+    <div class="form-box" >
+        <h1>Sign Up</h1>
+        <form action ="\car_rental_system\Resister.php" method = "POST">
+            <div class = "input-group">
+                <div class = "input">
+                    
+                    <input type ="text" placeholder="Name">
+                </div>
+
+                <div class = "input">
+                    
+                    <input type ="email" placeholder="email">
+                </div>
+
+                <div class = "input">
+                    
+                    <input type ="text" placeholder="Address">
+                </div>
+
+                <div class = "input">
+                    
+                    <input type ="password" placeholder="password">
+                </div>
+            </div>
+            <button class ="btn" > Sign Up</button>
+            <div class="bottom_line">
+                <p> Already have an Account <a href="#" >Sign in</a></p>
+            </div>
+           
+        </form>
+    </div>
+</body>
+</html>
